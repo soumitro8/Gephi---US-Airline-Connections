@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		
+		<title>US Airline Connections</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<style>
+
+			.zoom:hover 
+			{
+				transform: scale(1.05); 
+			}
+			
+			.well
+			{
+				background-color:#ecf0f1; 
+				margin-right:50px; 
+				margin-left:50px;
+				padding-left:50px;
+				padding-right:50px;
+			}
+
+			h1 
+			{
+				text-align: center;
+				font-size: 50px;
+			}
+
+			h2
+			{
+				text-align: center;
+			}
+			
+			h3
+			{
+				text-align: left;
+			}
+
+			img 
+			{
+				width: 1000px;
+				height: 600px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			dt 
+			{
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				overflow: hidden;
+				border: 1px solid #000;	
+				margin: 0 0 0 2em;
+			}
+			
+			.aqua {background-color: #EBFDD8; color: #EBFDD8; }
+			.orange {background-color: #24358E; color: #24358E; }
+
+			dd 
+			{
+				display: inline-block;
+				width: 5em;
+				margin: 0 0 0 1em;
+			}
+
+		</style>
+
+	</head>
+	
+	<body>
+	  
+	<div class="container-fluid">
+		<h1>US Airline Connections</h1>
+		
+		<h2>CSE 578: Data Visualization</h2>  
+		<h2>Soumitro Choudhury</h2>
+		<br>
+		
+		<div class="row">
+			<div class="well">
+				<div class="zoom">
+					<img src="Graph1.svg" alt="Airline Connections"></img>
+				</div>
+			</div>
+		</div>
+		
+		<div class = "row">
+			<div class="well" style="background-color:#F4A574;">
+				<h3 style="text-align:left;">The dataset is that of US airline connections. There are 235 nodes and 1297 edges. The network is undirected.
+				The nodes represent airports and the edges represent the flights established between airports. To reduce cluttering,
+				only nodes with a degree higher than 40 have been labeled. <br><br>
+				The visualization uses point marks (i.e. the nodes). The channels used are color and size. The size of each node is directly
+				proportional to its degree. Nodes with a low betweeness centrality are colored with a lighter shade of orange whereas a darker
+				shade indicates higher betweeness centrality.<br><br>
+				One structure that can be clearly observed from the network is that most airports with a high number of connections are
+				clustered on the East Coast of the country.<br><br>
+				The graph has 6 Modularity Classes.<br><br>
+				The average Degree Centrality of the graph is 11.03. There are very few nodes with a degree centrality greater than 20 and, as
+				can be seen from the graph, most of these are located on the East coast. This means that most airports only have 
+				direct connections to a small number of other airports.<br><br>
+				The average Betweeness Centrality of the graph is 154.21. In general, the nodes in this graph have a higher 
+				Between Centrality than Degree. This tells us that while a particular airport/node may have fewer direct connections, these connections
+				are linking different groups of airports together, thus increasing the importance of that airport.<br><br>
+				The average Eigenvector Centrality is 0.15. A relatively low average score shows that many airports/nodes are not
+				connected to airports of equal importance.<br><br></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="well">
+				<div class="zoom">
+					<img src="Graph2.svg" alt="Airline Connections"></img>
+					<dl>
+						<dt class="aqua">Aqua</dt>
+						<dd>Low Eigenvector Centrality</dd>
+						<dd style="margin: 0 0 0 2em;"><b> Min Node Size: </b>10</dd>
+						<br><br>
+						<dt class="orange">Orange</dt>
+						<dd>High Eigenvector Centrality</dd>
+						<dd style="margin: 0 0 0 2em;"><b> Max Node Size: </b>100</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class = "row">
+			<div class="well" style="background-color:#BBE6CA;">
+				<h3>In the above graph, node sizes are linearly depenedent on Eigenvector Centrality. Minimum size is set to 10 and 
+				maximum is set to 100. Also, a darker color indicates a higher value of Eigenvector Centrality</h3>
+			</div>
+		</div>
+	</div>
+
+	</body>
+
+</html>
